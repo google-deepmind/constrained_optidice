@@ -31,7 +31,7 @@ python3 -m constrained_optidice.tabular.run_random_cmdp_experiment --num_iterati
 
 # Run a continuous control experiment for a few iterations.
 python3 -m constrained_optidice.neural.run_experiment \
-  --data_path="constrained_optidice/data_example/cartpole_0.3_example.pickle" \
-  --init_obs_data_path="constrained_optidice/data_example/cartpole_0.3_example.pickle" \
+  --data_path="constrained_optidice/data_example/cartpole_0.3_example.npz" \
+  --init_obs_data_path="constrained_optidice/data_example/cartpole_0.3_example.npz" \
   --max_learner_steps=50 \
   --lp_launch_type=local_mp
