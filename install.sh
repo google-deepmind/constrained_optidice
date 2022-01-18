@@ -1,3 +1,4 @@
+#!/bin/bash
 # Copyright 2022 DeepMind Technologies Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,14 @@
 # limitations under the License.
 # ==============================================================================
 
-"""CDICE network definition."""
 
-import dataclasses
+# Fail on any error.
+set -e
 
-from acme.jax import networks as acme_networks
+# Install dependencies.
+python3 -m venv constrained_optidice_venv
+source constrained_optidice_venv/bin/activate
+pip3 install --upgrade -r constrained_optidice/requirements.txt
 
-
-@dataclasses.dataclass
-class CDICENetworks:
-  """Network and pure functions for the neural CDICE agent."""
-  forward: acme_networks.FeedForwardNetwork
-  policy: acme_networks.FeedForwardNetwork
-  behavior: acme_networks.FeedForwardNetwork
+git clone https://github.com/google-research/realworldrl_suite.git
+pip3 install realworldrl_suite/

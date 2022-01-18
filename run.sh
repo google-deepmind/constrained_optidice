@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2021 DeepMind Technologies Limited
+# Copyright 2022 DeepMind Technologies Limited
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,13 +18,7 @@
 # Fail on any error.
 set -e
 
-# Install dependencies.
-python3 -m venv constrained_optidice_venv
 source constrained_optidice_venv/bin/activate
-pip3 install --upgrade -r constrained_optidice/requirements.txt
-
-git clone https://github.com/google-research/realworldrl_suite.git
-pip3 install realworldrl_suite/
 
 # Run a tabular CMDP experiment for a few iterations.
 python3 -m constrained_optidice.tabular.run_random_cmdp_experiment --num_iterations=1
